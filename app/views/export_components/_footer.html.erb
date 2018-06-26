@@ -1,0 +1,91 @@
+<footer id="footer">
+  <nav class="container">
+    <div class="link-group">
+      <img id="footer-dit-logo" src="<%=asset_path('logos/DfIT_WHITE_AW.png')%>" alt="Department for International Trade"/>
+      <img id="footer-eig-logo" src="<%=asset_path('logos/EiG-logo-stacked.svg')%>" alt="Exporting is Great"/>
+    </div>
+    <div class="link-group">
+      <a class="links-list-heading custom-page-link" id="footer-custom-page-link" href="<%=Figaro.env.GREAT_GOV_URL %>/custom">Your export journey</a>
+      <h4 class="links-list-heading" id="footer-export-readiness-links">Export readiness</h4>
+      <ul aria-labelledby="footer-export-readiness-links" class="links-list">
+        <li>
+          <a id="footer-export-readiness-new" href="<%=Figaro.env.GREAT_GOV_URL %>/new">I'm new to exporting</a>
+        </li>
+        <li>
+          <a id="footer-export-readiness-occasional" href="<%=Figaro.env.GREAT_GOV_URL %>/occasional">I export occasionally</a>
+        </li>
+        <li>
+          <a id="footer-export-readiness-regular" href="<%=Figaro.env.GREAT_GOV_URL %>/regular">I'm a regular exporter</a>
+        </li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <h4 class="links-list-heading" id="footer-guidance-links">Guidance</h4>
+      <ul aria-labelledby="footer-guidance-links" class="links-list">
+        <li>
+          <a id="footer-guidance-market-research" href="<%=Figaro.env.GREAT_GOV_URL %>/market-research">Market research</a>
+        </li>
+        <li>
+          <a id="footer-guidance-customer-insight" href="<%=Figaro.env.GREAT_GOV_URL %>/customer-insight">Customer insight</a>
+        </li>
+        <li>
+          <a id="footer-guidance-finance" href="<%=Figaro.env.GREAT_GOV_URL %>/finance">Finance</a>
+        </li>
+        <li>
+          <a id="footer-guidance-business-planning" href="<%=Figaro.env.GREAT_GOV_URL %>/business-planning">Business planning</a>
+        </li>
+        <li>
+          <a id="footer-guidance-getting-paid" href="<%=Figaro.env.GREAT_GOV_URL %>/getting-paid">Getting paid</a>
+        </li>
+        <li>
+          <a id="footer-guidance-operations-and-compliance" href="<%=Figaro.env.GREAT_GOV_URL %>/operations-and-compliance">Operations and compliance</a>
+        </li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <h4 class="links-list-heading" id="footer-services-links">Services</h4>
+      <ul aria-labelledby="footer-services-links" class="links-list">
+        <li>
+          <a id="footer-services-find-a-buyer" href="<%=Figaro.env.FIND_A_BUYER_URL %>">Create a trade profile</a>
+        </li>
+        <li>
+          <a id="footer-services-selling-online-overseas" href="<%=Figaro.env.SELLING_ONLINE_OVERSEAS_URL %>">Sell online overseas</a>
+        </li>
+        <li>
+          <a id="footer-services-export-opportunities" href="<%=Figaro.env.EXPORT_OPPORTUNITIES_URL %>">Find export opportunities</a>
+        </li>
+        <li>
+          <a id="footer-services-get-finance" href="<%=Figaro.env.GREAT_GOV_URL %>/get-finance">Get finance</a>
+        </li>
+        <li>
+          <a id="footer-services-events" href="<%=Figaro.env.EVENTS_URL %>">Find events and visits</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container site-links">
+    <ul>
+      <li>
+        <a id="footer-site-links-about" href="<%=Figaro.env.GREAT_GOV_URL %>/about">About</a>
+      </li>
+      <li>
+        <a id="footer-site-links-contact" href="https://contact-us.export.great.gov.uk/directory/FeedbackForm">Contact us</a>
+      </li>
+      <li>
+        <a id="footer-site-links-privacy-and-cookies" href="<%=Figaro.env.GREAT_GOV_URL %>/privacy-and-cookies">Privacy and cookies</a>
+      </li>
+      <li>
+        <a id="footer-site-links-t-and-c" href="<%=Figaro.env.GREAT_GOV_URL %>/terms-and-conditions">Terms and conditions</a>
+      </li>
+      <li>
+        <a id="footer-site-links-t-and-c" href="<%=Figaro.env.GREAT_GOV_URL %>/performance-dashboard">Performance</a>
+      </li>
+      <li>
+        <a id="footer-site-links-dit" href="https://www.gov.uk/government/organisations/department-for-international-trade">Department for International Trade on GOV.UK</a>
+      </li>
+    </ul>
+  </div>
+  <div id="footer-copyright">
+    <p class="container"><span id="footer-copyright">&copy; Crown copyright <%= Time.current.year %>. All rights reserved.</span></p>
+  </div>
+</footer>
