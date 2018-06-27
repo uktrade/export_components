@@ -6,11 +6,11 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Bundle install
-        command: bundle check || bundle install
+          name: Bundle install
+          command: bundle check || bundle install
       - run:
-        name: Test
-        command: bundle exec rake
+          name: Test
+          command: bundle exec rake
 workflows:
   version: 2
   test:
