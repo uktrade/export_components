@@ -1,3 +1,5 @@
+require 'rails'
+
 module ExportComponents
   module Rails
     class Engine < ::Rails::Engine
