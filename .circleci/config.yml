@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/ruby:2.4
+    steps:
+      - checkout
+      - run:
+        name: Bundle install
+        command: bundle check || bundle install
+      - run:
+        name: Test
+        command: bundle exec rake
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
