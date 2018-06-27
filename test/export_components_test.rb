@@ -1,3 +1,4 @@
+require 'export_components/version'
 require 'test_helper'
 
 class ExportComponentsTest < Minitest::Test
