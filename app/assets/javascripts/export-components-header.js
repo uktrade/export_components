@@ -7,10 +7,6 @@ var headerFooter = {
   components: {},
   data: {},
   pages: {},
-
-  constants: {
-    COMPANIES_HOUSE_SEARCH: "/static/temp/companies-house-data.json"
-  }
 }
 // Utility Functions.
 // ---------------------

@@ -1,3 +1,6 @@
+.header-beta-bar {
+  background: #ffffff; }
+
 #header-bar {
   background: #1e1348; }
 
@@ -14,6 +17,8 @@
   margin-top: 0;
   height: auto;
   background: #ffffff; }
+  #header-menu .container {
+    overflow: auto; }
   #header-menu ul li {
     padding-right: 15px;
     box-sizing: border-box;
@@ -59,7 +64,10 @@
       text-decoration: underline;
       color: #006ccc;
       min-height: 0;
-      margin: 3px 3px 3px 0; }
+      margin: 3px 3px 3px 0;
+      padding: 0; }
+      #header-menu .links-list-item a span {
+        min-height: auto; }
       #header-menu .links-list-item a:visited {
         color: #4f0b7b; }
       #header-menu .links-list-item a:active {
