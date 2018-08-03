@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'combustion'
+require 'nokogiri'
 
 # If you're using all parts of Rails:
 # Combustion.initialize! :all
