@@ -187,7 +187,7 @@
       padding-bottom: 30px;
       min-height: 166px;
       font-weight: 400; }
-      #menu .links-list-item a h2 {
+      #menu .links-list-item a span {
         min-height: 3em;
         display: inline-block; }
       #menu .links-list-item a p {
@@ -215,8 +215,7 @@
     #menu .ExpanderControl.active:after {
       border-color: #d8d8d8; }
   #menu .navigation.active {
-    background-color: #00549f;
-    outline: none; }
+    background-color: #00549f; }
   #menu .links-list-heading:after {
     box-sizing: initial;
     -ms-transform: rotate(45deg);
@@ -303,15 +302,12 @@
       cursor: default;
       display: block;
       margin: 0;
-      outline: none;
       padding: 30px; }
       #menu a:hover {
         background-color: transparent; }
     #menu a.links-list-heading {
       border-top: #767676 solid 1px;
       border-bottom: 0; }
-    #menu a.links-list-heading:focus {
-      outline: none; }
     #menu ul li {
       display: block;
       margin: 0;
@@ -417,13 +413,13 @@
     #menu-activator:focus {
       outline: #ffbf47 solid 3px;
       outline-offset: 0; }
-    #menu-activator h2 {
+    #menu-activator span {
       position: absolute;
       right: 15px;
       top: 22px; }
-    #menu-activator h2,
-    #menu-activator h2:after,
-    #menu-activator h2:before {
+    #menu-activator span,
+    #menu-activator span:after,
+    #menu-activator span:before {
       background-color: #ffffff;
       clear: right;
       content: '';
@@ -431,7 +427,7 @@
       height: 2px;
       margin: 0 0 8px 10px;
       width: 20px; }
-    #menu-activator h2:before {
+    #menu-activator span:before {
       margin-top: -5px; }
   #menu-activator.active {
     background-color: #00549f;

@@ -77,9 +77,9 @@
         color: #2b8cc4; }
   #header-menu .links-list.container {
     margin-top: 15px; }
-  #header-menu .navigation:hover {
-    background: none; }
-    #header-menu .navigation:hover:before {
+  #header-menu a.navigation:hover {
+    background-color: transparent; }
+    #header-menu a.navigation:hover:before {
       display: none; }
   #header-menu .navigation.links-list-heading {
     border: 0;
@@ -158,3 +158,12 @@
     margin-left: 0; }
     #header-bar .account-links li:nth-child(3) {
       float: right; } }
+
+#header a.navigation.links-list-heading:hover {
+  background-color: transparent; }
+
+#header-menu .links-list-item a span {
+  text-decoration: underline; }
+
+#header-menu .links-list.container {
+  padding-top: 3px; }
