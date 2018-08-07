@@ -19,5 +19,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'combustion'
   spec.add_development_dependency 'rspec-rails', '~> 3.7'
-  spec.add_dependency 'rails', '~> 5.0'
+  spec.add_development_dependency 'byebug'
+  spec.add_dependency 'rails', '~> 5.2'
 end
