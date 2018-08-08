@@ -1,6 +1,6 @@
 
-var dit = {} || dit;
-dit.components = {} || dit.components;
+var dit = dit || {};
+dit.components = dit.components || {};
 
 dit.components.cookieNotice = (new function() {
 
