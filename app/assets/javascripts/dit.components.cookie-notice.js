@@ -13,12 +13,12 @@ dit.components.cookieNotice = (new function() {
     if (arguments.length && activate) {
       style = document.createElement('style');
       style.setAttribute('type', 'text/css');
-      style.setAttribute('id', 'menu-dropdown-view-inhibitor');
+      style.setAttribute('id', 'cookie-notice-view-inhibitor');
       style.appendChild(document.createTextNode(rule));
       document.head.appendChild(style);
     }
     else {
-      document.head.removeChild(document.getElementById("menu-dropdown-view-inhibitor"));
+      document.head.removeChild(document.getElementById('cookie-notice-view-inhibitor'));
     }
   };
 
@@ -29,24 +29,24 @@ dit.components.cookieNotice = (new function() {
     if (days) {
       var date = new Date();
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      value += "; expires=" + date.toGMTString();
+      value += '; expires=' + date.toGMTString();
     }
-    document.cookie = name + "=" + value + "; path=/";
+    document.cookie = name + '=' + value + '; path=/';
   }
 
   getCookie = function(name) {
     if (document.cookie.length > 0) {
-      var start = document.cookie.indexOf(name + "=");
+      var start = document.cookie.indexOf(name + '=');
       if (start !== -1) {
         start = start + name.length + 1;
-        var end = document.cookie.indexOf(";", start);
+        var end = document.cookie.indexOf(';', start);
         if (end == -1) {
           end = document.cookie.length;
         }
         return unescape(document.cookie.substring(start, end));
       }
     }
-    return "";
+    return ';
   }
 
   hideNoticeAndSetCookie = function() {
@@ -56,11 +56,12 @@ dit.components.cookieNotice = (new function() {
 
   createCloseButton = function() {
     const $container = $('.cookie-notice-container');
-    const $closeButton = $(document.createElement("button"));
-    $closeButton.addClass('cookie-close');
-    $closeButton.attr('aria-controls', COOKIE_NOTICE_ID);
-    $closeButton.attr('aria-label', 'Close this message');
-    $closeButton.attr('id', COOKIE_CLOSE_BUTTON_ID);
+    const $closeButton = $('<button>', {
+      'class': 'cookie-close',
+      'aria-controls': COOKIE_NOTICE_ID,
+      'aria-label': 'Close this message',
+      id: COOKIE_CLOSE_BUTTON_ID
+    });
     $container.append($closeButton);
     return $closeButton;
   }
@@ -68,14 +69,14 @@ dit.components.cookieNotice = (new function() {
   closeButtonEventHandler = function() {
     const $button = createCloseButton();
 
-    $button.on("keydown", function(e) {
+    $button.on('keydown', function(e) {
       // Close on enter or space
       if(e.which === 13 || e.which === 32) {
         hideNoticeAndSetCookie();
       }
     });
 
-    $button.on("click", function(e) {
+    $button.on('click', function(e) {
       hideNoticeAndSetCookie();
       e.preventDefault();
     });
