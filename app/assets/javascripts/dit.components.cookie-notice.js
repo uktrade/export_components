@@ -46,7 +46,7 @@ dit.components.cookieNotice = (new function() {
         return unescape(document.cookie.substring(start, end));
       }
     }
-    return ';
+    return '';
   }
 
   hideNoticeAndSetCookie = function() {
