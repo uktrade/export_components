@@ -6,3 +6,9 @@
 /pkg/
 /spec/reports/
 /tmp/
+
+# ignore IDE files
+/.idea/
+
+# don't checkin custom rubocop file
+.rubocop.yml

@@ -10,7 +10,7 @@ jobs:
           command: bundle check || bundle install
       - run:
           name: Test
-          command: bundle exec rake
+          command: make test
 workflows:
   version: 2
   test:
