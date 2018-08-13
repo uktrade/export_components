@@ -1,11 +1,11 @@
 
-var dit = {} || dit;
-dit.components = {} || dit.components;
+var dit = dit || {};
+dit.components = dit.components || {};
 
 dit.components.cookieNotice = (new function() {
 
-  const COOKIE_NOTICE_ID = 'header-cookie-notice';
-  const COOKIE_CLOSE_BUTTON_ID = 'dismiss-cookie-notice';
+  var COOKIE_NOTICE_ID = 'header-cookie-notice';
+  var COOKIE_CLOSE_BUTTON_ID = 'dismiss-cookie-notice';
 
   function viewInhibitor(activate) {
     var rule = '#header-cookie-notice { display: none; }';
@@ -55,8 +55,8 @@ dit.components.cookieNotice = (new function() {
   }
 
   createCloseButton = function() {
-    const $container = $('.cookie-notice-container');
-    const $closeButton = $('<button>', {
+    var $container = $('.cookie-notice-container');
+    var $closeButton = $('<button>', {
       'class': 'cookie-close',
       'aria-controls': COOKIE_NOTICE_ID,
       'aria-label': 'Close this message',
@@ -67,7 +67,7 @@ dit.components.cookieNotice = (new function() {
   }
 
   closeButtonEventHandler = function() {
-    const $button = createCloseButton();
+    var $button = createCloseButton();
 
     $button.on('keydown', function(e) {
       // Close on enter or space
@@ -84,7 +84,7 @@ dit.components.cookieNotice = (new function() {
 
   this.init = function() {
     closeButtonEventHandler();
-    let showCookieNotice = !getCookie('hide_cookie_notice');
+    var showCookieNotice = !getCookie('hide_cookie_notice');
     if (showCookieNotice) {
       $('#header-cookie-notice').show();
     } else {
