@@ -6,6 +6,7 @@ dit.components.cookieNotice = (new function() {
 
   var COOKIE_NOTICE_ID = 'header-cookie-notice';
   var COOKIE_CLOSE_BUTTON_ID = 'dismiss-cookie-notice';
+  var COOKIE_DOMAIN = $('#privacyCookieDomain').attr('value');
 
   function viewInhibitor(activate) {
     var rule = '#header-cookie-notice { display: none; }';
@@ -31,7 +32,7 @@ dit.components.cookieNotice = (new function() {
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
       value += '; expires=' + date.toGMTString();
     }
-    document.cookie = name + '=' + value + '; path=/';
+    document.cookie = name + '=' + value + '; domain=' + COOKIE_DOMAIN + ';path=/;';
   }
 
   getCookie = function(name) {
