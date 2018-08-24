@@ -1,13 +1,13 @@
 <header id="header">
   <div id="header-bar">
     <div class="container">
-      <a id="header-dit-logo" href="<%=Figaro.env.GREAT_GOV_URL %>">
+      <a id="header-dit-logo" href="<%=ENV['GREAT_GOV_URL'] %>">
         <img src="<%=asset_path 'dfit-logo-white.png' %>" alt="Home">
       </a>
       <ul aria-label="Account links" class="account-links">
         <% if !current_user %>
         <li class="anonymous">
-          <a id="header-register-link" href="<%=Figaro.env.SSO_ENDPOINT_BASE_URI %>/accounts/signup" class="register">Register</a>
+          <a id="header-register-link" href="<%=ENV['SSO_ENDPOINT_BASE_URI'] %>/accounts/signup" class="register">Register</a>
         </li>
         <li class="anonymous">
           <a id="header-sign-in-link" href="<%=dashboard_path%>" class="signin">Sign in</a>
@@ -29,38 +29,38 @@
       <nav id="menu">
         <ul>
           <li>
-            <a class="navigation " href="<%=Figaro.env.GREAT_GOV_URL %>" id="header-home-link">Home</a>
+            <a class="navigation " href="<%=ENV['GREAT_GOV_URL'] %>" id="header-home-link">Home</a>
           </li>
           <li>
-            <a class="navigation " href="<%=Figaro.env.GREAT_GOV_URL %>/custom" id="header-custom-page-link">Your export journey</a>
+            <a class="navigation " href="<%=ENV['GREAT_GOV_URL'] %>/custom" id="header-custom-page-link">Your export journey</a>
           </li>
           <li><a class="navigation links-list-heading" href="#export-readiness-links-list" id="export-readiness-links">Export readiness</a>
             <ul id="export-readiness-links-list" aria-labelledby="export-readiness-links" class="container links-list">
-              <li class="links-list-item column-third"><a id="header-export-readiness-new" href="<%=Figaro.env.GREAT_GOV_URL %>/new">I'm new to exporting</a></li>
-              <li class="links-list-item column-third"><a id="header-export-readiness-occasional" href="<%=Figaro.env.GREAT_GOV_URL %>/occasional">I export occasionally</a></li>
-              <li class="links-list-item column-third"><a id="header-export-readiness-regular" href="<%=Figaro.env.GREAT_GOV_URL %>/regular">I'm a regular exporter</a></li>
+              <li class="links-list-item column-third"><a id="header-export-readiness-new" href="<%=ENV['GREAT_GOV_URL'] %>/new">I'm new to exporting</a></li>
+              <li class="links-list-item column-third"><a id="header-export-readiness-occasional" href="<%=ENV['GREAT_GOV_URL'] %>/occasional">I export occasionally</a></li>
+              <li class="links-list-item column-third"><a id="header-export-readiness-regular" href="<%=ENV['GREAT_GOV_URL'] %>/regular">I'm a regular exporter</a></li>
             </ul>
           </li>
           <li><a class="navigation links-list-heading" href="#guidance-links-list" id="header-guidance-links">Guidance</a>
             <ul id="guidance-links-list" aria-labelledby="header-guidance-links" class="container links-list">
-              <li class="links-list-item column-sixth"><a id="header-guidance-market-research" href="<%=Figaro.env.GREAT_GOV_URL %>/market-research">Market research</a></li>
-              <li class="links-list-item column-sixth"><a id="header-guidance-customer-insight" href="<%=Figaro.env.GREAT_GOV_URL %>/customer-insight">Customer insight</a></li>
-              <li class="links-list-item column-sixth"><a id="header-guidance-finance" href="<%=Figaro.env.GREAT_GOV_URL %>/finance">Finance</a></li>
-              <li class="links-list-item column-sixth"><a id="header-guidance-business-planning" href="<%=Figaro.env.GREAT_GOV_URL %>/business-planning">Business planning</a></li>
-              <li class="links-list-item column-sixth"><a id="header-guidance-getting-paid" href="<%=Figaro.env.GREAT_GOV_URL %>/getting-paid">Getting paid</a></li>
-              <li class="links-list-item column-sixth"><a id="header-guidance-operations-and-compliance" href="<%=Figaro.env.GREAT_GOV_URL %>/operations-and-compliance">Operations and compliance</a></li>
+              <li class="links-list-item column-sixth"><a id="header-guidance-market-research" href="<%=ENV['GREAT_GOV_URL'] %>/market-research">Market research</a></li>
+              <li class="links-list-item column-sixth"><a id="header-guidance-customer-insight" href="<%=ENV['GREAT_GOV_URL'] %>/customer-insight">Customer insight</a></li>
+              <li class="links-list-item column-sixth"><a id="header-guidance-finance" href="<%=ENV['GREAT_GOV_URL'] %>/finance">Finance</a></li>
+              <li class="links-list-item column-sixth"><a id="header-guidance-business-planning" href="<%=ENV['GREAT_GOV_URL'] %>/business-planning">Business planning</a></li>
+              <li class="links-list-item column-sixth"><a id="header-guidance-getting-paid" href="<%=ENV['GREAT_GOV_URL'] %>/getting-paid">Getting paid</a></li>
+              <li class="links-list-item column-sixth"><a id="header-guidance-operations-and-compliance" href="<%=ENV['GREAT_GOV_URL'] %>/operations-and-compliance">Operations and compliance</a></li>
             </ul>
           </li>
           <li><a class="navigation links-list-heading" href="#services-links-list" id="header-services-links">Services</a>
             <ul id="services-links-list" aria-labelledby="header-services-links" class="container links-list">
               <li class="links-list-item column-fifth">
-                <a id="header-services-find-a-buyer" href="<%=Figaro.env.FIND_A_BUYER_URL %>">
+                <a id="header-services-find-a-buyer" href="<%=ENV['FIND_A_BUYER_URL'] %>">
                   <span>Create a business profile</span>
                   <p>Get promoted internationally with a great.gov.uk business profile</p>
                 </a>
               </li>
               <li class="links-list-item column-fifth">
-                <a id="header-services-selling-online-overseas" href="<%=Figaro.env.SELLING_ONLINE_OVERSEAS_URL %>">
+                <a id="header-services-selling-online-overseas" href="<%=ENV['SELLING_ONLINE_OVERSEAS_URL'] %>">
                   <span>Sell online overseas</span>
                   <p>Find the right marketplace for your business and access special offers for sellers</p>
                 </a>
@@ -72,13 +72,13 @@
                 </a>
               </li>
               <li class="links-list-item column-fifth">
-                <a id="header-services-get-finance" href="<%=Figaro.env.GREAT_GOV_URL %>/get-finance">
+                <a id="header-services-get-finance" href="<%=ENV['GREAT_GOV_URL'] %>/get-finance">
                   <span>Get finance</span>
                   <p>Get the finance you need to compete and grow</p>
                 </a>
               </li>
               <li class="links-list-item column-fifth">
-                <a id="header-services-events" href="<%=Figaro.env.EVENTS_URL %>">
+                <a id="header-services-events" href="<%=ENV['EVENTS_URL'] %>">
                   <span>Find events and visits</span>
                   <p>Attend events and see how visits by ministers can support your trade deals</p>
                 </a>

@@ -6,12 +6,11 @@ RSpec.describe 'export_components/_header.html.erb', type: :view do
   before do
     allow(view).to receive(:dashboard_path).and_return('dashboard')
     allow(view).to receive(:destroy_user_session_path).and_return('signout')
-    stub_const('Figaro', double)
-    allow(Figaro).to receive_message_chain(:env, :GREAT_GOV_URL).and_return('https://great.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :FIND_A_BUYER_URL).and_return('https://fab.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :SELLING_ONLINE_OVERSEAS_URL).and_return('https://soo.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :EVENTS_URL).and_return('https://events.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :SSO_ENDPOINT_BASE_URI).and_return('https://sso.gov.uk')
+    ENV['GREAT_GOV_URL'] = 'https://great.gov.uk'
+    ENV['FIND_A_BUYER_URL'] = 'https://fab.gov.uk'
+    ENV['SELLING_ONLINE_OVERSEAS_URL'] = 'https://soo.gov.uk'
+    ENV['EVENTS_URL'] = 'https://events.gov.uk'
+    ENV['SSO_ENDPOINT_BASE_URI'] = 'https://sso.gov.uk'
   end
 
   it 'contains the correct account links when signed in' do
@@ -24,7 +23,7 @@ RSpec.describe 'export_components/_header.html.erb', type: :view do
 
   it 'contains the correct account links when signed out' do
     allow(view).to receive(:current_user).and_return(false)
-    allow(Figaro).to receive_message_chain(:env, :SSO_ENDPOINT_BASE_URI).and_return('register')
+    ENV['SSO_ENDPOINT_BASE_URI'] = 'register'
     render
     @html = Nokogiri::HTML(rendered)
     expect(@html.css('#header-register-link')[0]['href']).to eq('register/accounts/signup')
@@ -70,12 +69,11 @@ end
 
 RSpec.describe 'export_components/_footer.html.erb', type: :view do
   before do
-    stub_const('Figaro', double)
-    allow(Figaro).to receive_message_chain(:env, :GREAT_GOV_URL).and_return('https://great.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :FIND_A_BUYER_URL).and_return('https://fab.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :SELLING_ONLINE_OVERSEAS_URL).and_return('https://soo.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :EVENTS_URL).and_return('https://events.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :SSO_ENDPOINT_BASE_URI).and_return('https://sso.gov.uk')
+    ENV['GREAT_GOV_URL'] = 'https://great.gov.uk'
+    ENV['FIND_A_BUYER_URL'] = 'https://fab.gov.uk'
+    ENV['SELLING_ONLINE_OVERSEAS_URL'] = 'https://soo.gov.uk'
+    ENV['EVENTS_URL'] = 'https://events.gov.uk'
+    ENV['SSO_ENDPOINT_BASE_URI'] = 'https://sso.gov.uk'
   end
 
   it 'contains correct export readiness links' do
