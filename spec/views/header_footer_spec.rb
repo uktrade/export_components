@@ -65,8 +65,15 @@ RSpec.describe 'export_components/_header.html.erb', type: :view do
     expect(@html.css('#header-services-get-finance')[0]['href']).to eq('https://great.gov.uk/get-finance')
     expect(@html.css('#header-services-events')[0]['href']).to eq('https://events.gov.uk')
   end
-end
 
+  it 'contains the events link which opens in a new tab' do
+    allow(view).to receive(:current_user).and_return('user')
+    render
+    @html = Nokogiri::HTML(rendered)
+    expect(@html.css('#header-services-events')[0]['rel']).to eq('noopener noreferrer')
+    expect(@html.css('#header-services-events')[0]['target']).to eq('_blank')
+  end
+end
 
 RSpec.describe 'export_components/_footer.html.erb', type: :view do
   before do
