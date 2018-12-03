@@ -31,16 +31,20 @@
           <li>
             <a class="navigation " href="<%=Figaro.env.GREAT_GOV_URL %>" id="header-home-link">Home</a>
           </li>
-          <li>
-            <a class="navigation " href="<%=Figaro.env.GREAT_GOV_URL %>/custom" id="header-custom-page-link">Your export journey</a>
-          </li>
-          <li><a class="navigation links-list-heading" href="#export-readiness-links-list" id="export-readiness-links">Export readiness</a>
-            <ul id="export-readiness-links-list" aria-labelledby="export-readiness-links" class="container links-list">
-              <li class="links-list-item column-third"><a id="header-export-readiness-new" href="<%=Figaro.env.GREAT_GOV_URL %>/new">I'm new to exporting</a></li>
-              <li class="links-list-item column-third"><a id="header-export-readiness-occasional" href="<%=Figaro.env.GREAT_GOV_URL %>/occasional">I export occasionally</a></li>
-              <li class="links-list-item column-third"><a id="header-export-readiness-regular" href="<%=Figaro.env.GREAT_GOV_URL %>/regular">I'm a regular exporter</a></li>
-            </ul>
-          </li>
+
+          <% if !Figaro.env.FEATURE_EXPORT_JOURNEY_DISABLED %>
+            <li>
+              <a class="navigation " href="<%=Figaro.env.GREAT_GOV_URL %>/custom" id="header-custom-page-link">Your export journey</a>
+            </li>
+            <li><a class="navigation links-list-heading" href="#export-readiness-links-list" id="export-readiness-links">Export readiness</a>
+              <ul id="export-readiness-links-list" aria-labelledby="export-readiness-links" class="container links-list">
+                <li class="links-list-item column-third"><a id="header-export-readiness-new" href="<%=Figaro.env.GREAT_GOV_URL %>/new">I'm new to exporting</a></li>
+                <li class="links-list-item column-third"><a id="header-export-readiness-occasional" href="<%=Figaro.env.GREAT_GOV_URL %>/occasional">I export occasionally</a></li>
+                <li class="links-list-item column-third"><a id="header-export-readiness-regular" href="<%=Figaro.env.GREAT_GOV_URL %>/regular">I'm a regular exporter</a></li>
+              </ul>
+            </li>
+          <% end %>
+
           <li><a class="navigation links-list-heading" href="#guidance-links-list" id="header-guidance-links">Guidance</a>
             <ul id="guidance-links-list" aria-labelledby="header-guidance-links" class="container links-list">
               <li class="links-list-item column-sixth"><a id="header-guidance-market-research" href="<%=Figaro.env.GREAT_GOV_URL %>/market-research">Market research</a></li>
