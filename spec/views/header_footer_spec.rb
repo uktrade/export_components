@@ -12,7 +12,7 @@ RSpec.describe 'export_components/_header.html.erb', type: :view do
     allow(Figaro).to receive_message_chain(:env, :SELLING_ONLINE_OVERSEAS_URL).and_return('https://soo.gov.uk')
     allow(Figaro).to receive_message_chain(:env, :EVENTS_URL).and_return('https://events.gov.uk')
     allow(Figaro).to receive_message_chain(:env, :SSO_ENDPOINT_BASE_URI).and_return('https://sso.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :FEATURES_EXPORT_JOURNEY_DISABLED).and_return(false)
+    allow(Figaro).to receive_message_chain(:env, :FEATURE_EXPORT_JOURNEY_DISABLED).and_return(false)
   end
 
   it 'contains the correct account links when signed in' do
@@ -46,7 +46,7 @@ RSpec.describe 'export_components/_header.html.erb', type: :view do
 
   it 'does not contain export readiness links when export journey is disabled' do
     allow(view).to receive(:current_user).and_return('user')
-    allow(Figaro).to receive_message_chain(:env, :FEATURES_EXPORT_JOURNEY_DISABLED).and_return(true)
+    allow(Figaro).to receive_message_chain(:env, :FEATURE_EXPORT_JOURNEY_DISABLED).and_return(true)
     render
     @html = Nokogiri::HTML(rendered)
     expect(@html.css('#header-custom-page-link').first).to be_falsey
@@ -95,7 +95,7 @@ RSpec.describe 'export_components/_footer.html.erb', type: :view do
     allow(Figaro).to receive_message_chain(:env, :SELLING_ONLINE_OVERSEAS_URL).and_return('https://soo.gov.uk')
     allow(Figaro).to receive_message_chain(:env, :EVENTS_URL).and_return('https://events.gov.uk')
     allow(Figaro).to receive_message_chain(:env, :SSO_ENDPOINT_BASE_URI).and_return('https://sso.gov.uk')
-    allow(Figaro).to receive_message_chain(:env, :FEATURES_EXPORT_JOURNEY_DISABLED).and_return(false)
+    allow(Figaro).to receive_message_chain(:env, :FEATURE_EXPORT_JOURNEY_DISABLED).and_return(false)
   end
 
   it 'contains correct export readiness links' do
@@ -110,7 +110,7 @@ RSpec.describe 'export_components/_footer.html.erb', type: :view do
 
   it 'does not contain export readiness links when export journey is disabled' do
     allow(view).to receive(:current_user).and_return('user')
-    allow(Figaro).to receive_message_chain(:env, :FEATURES_EXPORT_JOURNEY_DISABLED).and_return(true)
+    allow(Figaro).to receive_message_chain(:env, :FEATURE_EXPORT_JOURNEY_DISABLED).and_return(true)
     render
     @html = Nokogiri::HTML(rendered)
     expect(@html.css('#footer-export-readiness-new').first).to be_falsey
