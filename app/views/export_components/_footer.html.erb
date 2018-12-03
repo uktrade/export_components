@@ -6,18 +6,22 @@
     </div>
     <div class="link-group">
       <a class="links-list-heading custom-page-link" id="footer-custom-page-link" href="<%=Figaro.env.GREAT_GOV_URL %>/custom">Your export journey</a>
-      <h4 class="links-list-heading" id="footer-export-readiness-links">Export readiness</h4>
-      <ul aria-labelledby="footer-export-readiness-links" class="links-list">
-        <li>
-          <a id="footer-export-readiness-new" href="<%=Figaro.env.GREAT_GOV_URL %>/new">I'm new to exporting</a>
-        </li>
-        <li>
-          <a id="footer-export-readiness-occasional" href="<%=Figaro.env.GREAT_GOV_URL %>/occasional">I export occasionally</a>
-        </li>
-        <li>
-          <a id="footer-export-readiness-regular" href="<%=Figaro.env.GREAT_GOV_URL %>/regular">I'm a regular exporter</a>
-        </li>
-      </ul>
+
+      <% if !Figaro.env.FEATURES_EXPORT_JOURNEY_DISABLED %>
+        <h4 class="links-list-heading" id="footer-export-readiness-links">Export readiness</h4>
+        <ul aria-labelledby="footer-export-readiness-links" class="links-list">
+          <li>
+            <a id="footer-export-readiness-new" href="<%=Figaro.env.GREAT_GOV_URL %>/new">I'm new to exporting</a>
+          </li>
+          <li>
+            <a id="footer-export-readiness-occasional" href="<%=Figaro.env.GREAT_GOV_URL %>/occasional">I export occasionally</a>
+          </li>
+          <li>
+            <a id="footer-export-readiness-regular" href="<%=Figaro.env.GREAT_GOV_URL %>/regular">I'm a regular exporter</a>
+          </li>
+        </ul>
+      <% end %>
+
     </div>
     <div class="link-group">
       <h4 class="links-list-heading" id="footer-guidance-links">Guidance</h4>
