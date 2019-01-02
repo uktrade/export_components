@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    export_components (0.10.1)
+    export_components (1.0.0)
       rails (~> 5.2)
 
 GEM
