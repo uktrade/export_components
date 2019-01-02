@@ -32,21 +32,16 @@ RSpec.describe 'export_components/_header.html.erb', type: :view do
     expect(@html.css('#header-sign-in-link').first['href']).to eq('dashboard')
   end
 
-  it 'contains correct export readiness links' do
+  it 'contains home links' do
     allow(view).to receive(:current_user).and_return('user')
     render
     @html = Nokogiri::HTML(rendered)
     expect(@html.css('#header-dit-logo').first['href']).to eq('https://great.gov.uk')
     expect(@html.css('#header-home-link').first['href']).to eq('https://great.gov.uk')
-    expect(@html.css('#header-custom-page-link').first['href']).to eq('https://great.gov.uk/custom')
-    expect(@html.css('#header-export-readiness-new').first['href']).to eq('https://great.gov.uk/new')
-    expect(@html.css('#header-export-readiness-occasional').first['href']).to eq('https://great.gov.uk/occasional')
-    expect(@html.css('#header-export-readiness-regular').first['href']).to eq('https://great.gov.uk/regular')
   end
 
-  it 'does not contain export readiness links when export journey is disabled' do
+  it 'does not contain export readiness links' do
     allow(view).to receive(:current_user).and_return('user')
-    allow(Figaro).to receive_message_chain(:env, :FEATURE_EXPORT_JOURNEY_DISABLED).and_return(true)
     render
     @html = Nokogiri::HTML(rendered)
     expect(@html.css('#header-custom-page-link').first).to be_falsey
@@ -55,16 +50,30 @@ RSpec.describe 'export_components/_header.html.erb', type: :view do
     expect(@html.css('#header-export-readiness-regular').first).to be_falsey
   end
 
-  it 'contains correct guidance links' do
+  it 'does not contain old guidance links' do
     allow(view).to receive(:current_user).and_return('user')
     render
     @html = Nokogiri::HTML(rendered)
-    expect(@html.css('#header-guidance-market-research').first['href']).to eq('https://great.gov.uk/market-research')
-    expect(@html.css('#header-guidance-customer-insight').first['href']).to eq('https://great.gov.uk/customer-insight')
-    expect(@html.css('#header-guidance-finance').first['href']).to eq('https://great.gov.uk/finance')
-    expect(@html.css('#header-guidance-business-planning').first['href']).to eq('https://great.gov.uk/business-planning')
-    expect(@html.css('#header-guidance-getting-paid').first['href']).to eq('https://great.gov.uk/getting-paid')
-    expect(@html.css('#header-guidance-operations-and-compliance').first['href']).to eq('https://great.gov.uk/operations-and-compliance')
+    expect(@html.css('#header-guidance-market-research').first).to be_falsey
+    expect(@html.css('#header-guidance-customer-insight').first).to be_falsey
+    expect(@html.css('#header-guidance-finance').first).to be_falsey
+    expect(@html.css('#header-guidance-business-planning').first).to be_falsey
+    expect(@html.css('#header-guidance-getting-paid').first).to be_falsey
+    expect(@html.css('#header-guidance-operations-and-compliance').first).to be_falsey
+  end
+
+  it 'contains new advice links' do
+    allow(view).to receive(:current_user).and_return('user')
+    render
+    @html = Nokogiri::HTML(rendered)
+    expect(@html.css('#header-advice-create-an-export-plan').first['href']).to eq('https://great.gov.uk/advice/create-an-export-plan/')
+    expect(@html.css('#header-advice-find-an-export-market').first['href']).to eq('https://great.gov.uk/advice/find-an-export-market/')
+    expect(@html.css('#header-advice-define-route-to-market').first['href']).to eq('https://great.gov.uk/advice/define-route-to-market/')
+    expect(@html.css('#header-advice-get-export-finance-and-funding').first['href']).to eq('https://great.gov.uk/advice/get-export-finance-and-funding/')
+    expect(@html.css('#header-advice-manage-payment-for-export-orders').first['href']).to eq('https://great.gov.uk/advice/manage-payment-for-export-orders/')
+    expect(@html.css('#header-advice-prepare-to-do-business-in-a-foreign-country').first['href']).to eq('https://great.gov.uk/advice/prepare-to-do-business-in-a-foreign-country/')
+    expect(@html.css('#header-advice-manage-legal-and-ethical-compliance').first['href']).to eq('https://great.gov.uk/advice/manage-legal-and-ethical-compliance/')
+    expect(@html.css('#header-advice-prepare-for-export-procedures-and-logistics').first['href']).to eq('https://great.gov.uk/advice/prepare-for-export-procedures-and-logistics/')
   end
 
   it 'contains correct services links' do
@@ -98,36 +107,40 @@ RSpec.describe 'export_components/_footer.html.erb', type: :view do
     allow(Figaro).to receive_message_chain(:env, :FEATURE_EXPORT_JOURNEY_DISABLED).and_return(false)
   end
 
-  it 'contains correct export readiness links' do
+  it 'does not contain export readiness links' do
     allow(view).to receive(:current_user).and_return('user')
     render
     @html = Nokogiri::HTML(rendered)
-    expect(@html.css('#footer-custom-page-link').first['href']).to eq('https://great.gov.uk/custom')
-    expect(@html.css('#footer-export-readiness-new').first['href']).to eq('https://great.gov.uk/new')
-    expect(@html.css('#footer-export-readiness-occasional').first['href']).to eq('https://great.gov.uk/occasional')
-    expect(@html.css('#footer-export-readiness-regular').first['href']).to eq('https://great.gov.uk/regular')
-  end
-
-  it 'does not contain export readiness links when export journey is disabled' do
-    allow(view).to receive(:current_user).and_return('user')
-    allow(Figaro).to receive_message_chain(:env, :FEATURE_EXPORT_JOURNEY_DISABLED).and_return(true)
-    render
-    @html = Nokogiri::HTML(rendered)
+    expect(@html.css('#footer-custom-page-link').first).to be_falsey
     expect(@html.css('#footer-export-readiness-new').first).to be_falsey
     expect(@html.css('#footer-export-readiness-occasional').first).to be_falsey
     expect(@html.css('#footer-export-readiness-regular').first).to be_falsey
   end
 
-  it 'contains correct guidance links' do
+  it 'does not contain old guidance links' do
     allow(view).to receive(:current_user).and_return('user')
     render
     @html = Nokogiri::HTML(rendered)
-    expect(@html.css('#footer-guidance-market-research').first['href']).to eq('https://great.gov.uk/market-research')
-    expect(@html.css('#footer-guidance-customer-insight').first['href']).to eq('https://great.gov.uk/customer-insight')
-    expect(@html.css('#footer-guidance-finance').first['href']).to eq('https://great.gov.uk/finance')
-    expect(@html.css('#footer-guidance-business-planning').first['href']).to eq('https://great.gov.uk/business-planning')
-    expect(@html.css('#footer-guidance-getting-paid').first['href']).to eq('https://great.gov.uk/getting-paid')
-    expect(@html.css('#footer-guidance-operations-and-compliance').first['href']).to eq('https://great.gov.uk/operations-and-compliance')
+    expect(@html.css('#footer-guidance-market-research').first).to be_falsey
+    expect(@html.css('#footer-guidance-customer-insight').first).to be_falsey
+    expect(@html.css('#footer-guidance-finance').first).to be_falsey
+    expect(@html.css('#footer-guidance-business-planning').first).to be_falsey
+    expect(@html.css('#footer-guidance-getting-paid').first).to be_falsey
+    expect(@html.css('#footer-guidance-operations-and-compliance').first).to be_falsey
+  end
+
+  it 'contains new advice links' do
+    allow(view).to receive(:current_user).and_return('user')
+    render
+    @html = Nokogiri::HTML(rendered)
+    expect(@html.css('#footer-advice-create-an-export-plan').first['href']).to eq('https://great.gov.uk/advice/create-an-export-plan/')
+    expect(@html.css('#footer-advice-find-an-export-market').first['href']).to eq('https://great.gov.uk/advice/find-an-export-market/')
+    expect(@html.css('#footer-advice-define-route-to-market').first['href']).to eq('https://great.gov.uk/advice/define-route-to-market/')
+    expect(@html.css('#footer-advice-get-export-finance-and-funding').first['href']).to eq('https://great.gov.uk/advice/get-export-finance-and-funding/')
+    expect(@html.css('#footer-advice-manage-payment-for-export-orders').first['href']).to eq('https://great.gov.uk/advice/manage-payment-for-export-orders/')
+    expect(@html.css('#footer-advice-prepare-to-do-business-in-a-foreign-country').first['href']).to eq('https://great.gov.uk/advice/prepare-to-do-business-in-a-foreign-country/')
+    expect(@html.css('#footer-advice-manage-legal-and-ethical-compliance').first['href']).to eq('https://great.gov.uk/advice/manage-legal-and-ethical-compliance/')
+    expect(@html.css('#footer-advice-prepare-for-export-procedures-and-logistics').first['href']).to eq('https://great.gov.uk/advice/prepare-for-export-procedures-and-logistics/')
   end
 
   it 'contains correct services links' do
@@ -145,7 +158,8 @@ RSpec.describe 'export_components/_footer.html.erb', type: :view do
     allow(view).to receive(:current_user).and_return('user')
     render
     @html = Nokogiri::HTML(rendered)
-    expect(@html.css('#footer-site-links-contact').first['href']).to eq('https://contact-us.export.great.gov.uk/directory/FeedbackForm')
+    expect(@html.css('#footer-site-links-about').first['href']).to eq('https://great.gov.uk/about')
+    expect(@html.css('#footer-site-links-contact').first['href']).to eq('https://great.gov.uk/contact/triage/location/')
     expect(@html.css('#footer-site-links-privacy-and-cookies').first['href']).to eq('https://great.gov.uk/privacy-and-cookies')
     expect(@html.css('#footer-site-links-t-and-c').first['href']).to eq('https://great.gov.uk/terms-and-conditions')
     expect(@html.css('#footer-site-links-performance').first['href']).to eq('https://great.gov.uk/performance-dashboard')

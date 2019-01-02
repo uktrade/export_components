@@ -1,48 +1,35 @@
 <footer id="footer">
   <nav class="container">
-    <div class="link-group">
+    <div class="link-group footer-logos">
       <img id="footer-dit-logo" src="<%=asset_path('logos/DfIT_WHITE_AW.png')%>" alt="Department for International Trade"/>
       <img id="footer-eig-logo" src="<%=asset_path('logos/EiG-logo-stacked.svg')%>" alt="Exporting is Great"/>
     </div>
     <div class="link-group">
-      <a class="links-list-heading custom-page-link" id="footer-custom-page-link" href="<%=Figaro.env.GREAT_GOV_URL %>/custom">Your export journey</a>
-
-      <% if !Figaro.env.FEATURE_EXPORT_JOURNEY_DISABLED %>
-        <h4 class="links-list-heading" id="footer-export-readiness-links">Export readiness</h4>
-        <ul aria-labelledby="footer-export-readiness-links" class="links-list">
-          <li>
-            <a id="footer-export-readiness-new" href="<%=Figaro.env.GREAT_GOV_URL %>/new">I'm new to exporting</a>
-          </li>
-          <li>
-            <a id="footer-export-readiness-occasional" href="<%=Figaro.env.GREAT_GOV_URL %>/occasional">I export occasionally</a>
-          </li>
-          <li>
-            <a id="footer-export-readiness-regular" href="<%=Figaro.env.GREAT_GOV_URL %>/regular">I'm a regular exporter</a>
-          </li>
-        </ul>
-      <% end %>
-
-    </div>
-    <div class="link-group">
-      <h4 class="links-list-heading" id="footer-guidance-links">Guidance</h4>
-      <ul aria-labelledby="footer-guidance-links" class="links-list">
+      <h4 class="links-list-heading" id="footer-advice-links">Advice</h4>
+      <ul aria-labelledby="footer-advice-links" class="links-list">
         <li>
-          <a id="footer-guidance-market-research" href="<%=Figaro.env.GREAT_GOV_URL %>/market-research">Market research</a>
+          <a id="footer-advice-create-an-export-plan" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/create-an-export-plan/">Create an export plan</a>
         </li>
         <li>
-          <a id="footer-guidance-customer-insight" href="<%=Figaro.env.GREAT_GOV_URL %>/customer-insight">Customer insight</a>
+          <a id="footer-advice-find-an-export-market" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/find-an-export-market/">Find an export market</a>
         </li>
         <li>
-          <a id="footer-guidance-finance" href="<%=Figaro.env.GREAT_GOV_URL %>/finance">Finance</a>
+          <a id="footer-advice-define-route-to-market" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/define-route-to-market/">Define route to market</a>
         </li>
         <li>
-          <a id="footer-guidance-business-planning" href="<%=Figaro.env.GREAT_GOV_URL %>/business-planning">Business planning</a>
+          <a id="footer-advice-get-export-finance-and-funding" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/get-export-finance-and-funding/">Get export finance and funding</a>
         </li>
         <li>
-          <a id="footer-guidance-getting-paid" href="<%=Figaro.env.GREAT_GOV_URL %>/getting-paid">Getting paid</a>
+          <a id="footer-advice-manage-payment-for-export-orders" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/manage-payment-for-export-orders/">Manage payment for export orders</a>
         </li>
         <li>
-          <a id="footer-guidance-operations-and-compliance" href="<%=Figaro.env.GREAT_GOV_URL %>/operations-and-compliance">Operations and compliance</a>
+          <a id="footer-advice-prepare-to-do-business-in-a-foreign-country" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/prepare-to-do-business-in-a-foreign-country/">Prepare to do business in a foreign country</a>
+        </li>
+        <li>
+          <a id="footer-advice-manage-legal-and-ethical-compliance" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/manage-legal-and-ethical-compliance/">Manage legal and ethical compliance</a>
+        </li>
+        <li>
+          <a id="footer-advice-prepare-for-export-procedures-and-logistics" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/prepare-for-export-procedures-and-logistics/">Prepare for export procedures and logistics</a>
         </li>
       </ul>
     </div>
