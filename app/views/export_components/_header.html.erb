@@ -1,102 +1,78 @@
-<header id="header">
-  <div id="header-bar">
+
+<header id="great-header" class="great-header domestic">
+
+  <div id="great-global-header" class="great-global-header-footer great-global-header domestic">
     <div class="container">
-      <a id="header-dit-logo" href="<%=Figaro.env.GREAT_GOV_URL %>">
-        <img src="<%=asset_path 'dfit-logo-white.png' %>" alt="Home">
+      <img id="great-global-header-logo" class="great-global-header-footer-logo" height="21" alt="Department for International Trade" src="<%= asset_path 'dit-logo.svg' %>">
+      <div class="great-domestic-international-links">
+        <a href="<%= Figaro.env.GREAT_GOV_URL %>" id="great-global-header-domestic-link" class="domestic">For UK businesses</a>
+        <a href="<%= Figaro.env.GREAT_GOV_URL %>/international/" id="great-global-header-international-link" class="international">For international businesses</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="great-header-menu" class="great-header-menu domestic">
+    <div class="container">
+
+      <a id="great-header-logo" class="great-header-logo" href="<%=Figaro.env.GREAT_GOV_URL %>">
+        <img src="<%= asset_path 'eig-logo-stacked.svg' %>" alt="Exporting is Great" height="80">
       </a>
-      <ul aria-label="Account links" class="account-links">
+
+      <ul class="great-header-extra-links" id="great-header-extra-links">
         <% if !current_user %>
         <li class="anonymous">
-          <a id="header-register-link" href="<%=Figaro.env.SSO_ENDPOINT_BASE_URI %>/accounts/signup" class="register">Register</a>
-        </li>
-        <li class="anonymous">
-          <a id="header-sign-in-link" href="<%=dashboard_path%>" class="signin">Sign in</a>
+          <a id="header-sign-in-link" href="<%= dashboard_path %>" class="account-link signin">Sign in</a>
         </li>
         <% else %>
         <li class="authenticated">
-          <a id="header-profile-link" href="<%=dashboard_path%>" class="profile">Account</a>
+          <a id="header-profile-link" href="<%= dashboard_path %>" class="account-link profile">Account</a>
         </li>
         <li class="authenticated">
-          <a id="header-sign-out-link" href="<%=destroy_user_session_path%>" class="signout">Sign out</a>
+          <a id="header-sign-out-link" href="<%= destroy_user_session_path %>" class="account-link signout">Sign out</a>
         </li>
         <% end %>
       </ul>
     </div>
-  </div>
 
-  <div id="header-menu">
-    <div class="container">
-      <nav id="menu">
-        <ul>
-          <li>
-            <a class="navigation " href="<%=Figaro.env.GREAT_GOV_URL %>" id="header-home-link">Home</a>
+    <div class="great-header-nav-container">
+      <nav id="great-header-nav" class="great-header-nav domestic" aria-label="Main menu">
+        <ul class="great-header-nav-list js-nav-list" id="great-header-nav-list">
+
+          <li class="column-quarter js-menuitem">
+            <a href="<%=Figaro.env.GREAT_GOV_URL %>/advice/" class="link-heading" id="header-advice">Advice</a>
           </li>
 
-          <li><a class="navigation links-list-heading" href="#advice-links-list" id="header-advice-links">Advice</a>
-            <ul id="advice-links-list" aria-labelledby="header-advice-links" class="container links-list">
-               <li class="links-list-item column-eigth">
-                <a id="header-advice-create-an-export-plan" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/create-an-export-plan/">Create an export plan</a>
-              </li>
-               <li class="links-list-item column-eigth">
-                <a id="header-advice-find-an-export-market" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/find-an-export-market/">Find an export market</a>
-              </li>
-               <li class="links-list-item column-eigth">
-                <a id="header-advice-define-route-to-market" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/define-route-to-market/">Define route to market</a>
-              </li>
-               <li class="links-list-item column-eigth">
-                <a id="header-advice-get-export-finance-and-funding" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/get-export-finance-and-funding/">Get export finance and funding</a>
-              </li>
-               <li class="links-list-item column-eigth">
-                <a id="header-advice-manage-payment-for-export-orders" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/manage-payment-for-export-orders/">Manage payment for export orders</a>
-              </li>
-               <li class="links-list-item column-eigth">
-                <a id="header-advice-prepare-to-do-business-in-a-foreign-country" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/prepare-to-do-business-in-a-foreign-country/">Prepare to do business in a foreign country</a>
-              </li>
-               <li class="links-list-item column-eigth">
-                <a id="header-advice-manage-legal-and-ethical-compliance" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/manage-legal-and-ethical-compliance/">Manage legal and ethical compliance</a>
-              </li>
-               <li class="links-list-item column-eigth">
-                <a id="header-advice-prepare-for-export-procedures-and-logistics" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/prepare-for-export-procedures-and-logistics/">Prepare for export procedures and logistics</a>
-              </li>
-            </ul>
+          <li class="column-quarter js-menuitem">
+            <a href="<%=Figaro.env.GREAT_GOV_URL %>/markets/" class="link-heading" id="header-markets">Markets</a>
           </li>
 
-          <li><a class="navigation links-list-heading" href="#services-links-list" id="header-services-links">Services</a>
-            <ul id="services-links-list" aria-labelledby="header-services-links" class="container links-list">
-              <li class="links-list-item column-fifth">
-                <a id="header-services-find-a-buyer" href="<%=Figaro.env.FIND_A_BUYER_URL %>">
-                  <span>Create a business profile</span>
-                  <p>Get promoted internationally with a great.gov.uk business profile</p>
-                </a>
-              </li>
-              <li class="links-list-item column-fifth">
-                <a id="header-services-selling-online-overseas" href="<%=Figaro.env.SELLING_ONLINE_OVERSEAS_URL %>">
-                  <span>Sell online overseas</span>
-                  <p>Find the right marketplace for your business and access special offers for sellers</p>
-                </a>
-              </li>
-              <li class="links-list-item column-fifth">
-                <a id="header-services-export-opportunities" href="/">
-                  <span>Find export opportunities</span>
-                  <p>Find and apply for overseas opportunities</p>
-                </a>
-              </li>
-              <li class="links-list-item column-fifth">
-                <a id="header-services-get-finance" href="<%=Figaro.env.GREAT_GOV_URL %>/get-finance">
-                  <span>Get finance</span>
-                  <p>Get the finance you need to compete and grow</p>
-                </a>
-              </li>
-              <li class="links-list-item column-fifth">
-                <a id="header-services-events" href="<%=Figaro.env.EVENTS_URL %>" rel="noopener noreferrer" target="_blank">
-                  <span>Find events and visits</span>
-                  <p>Attend events and see how visits by ministers can support your trade deals</p>
-                </a>
-              </li>
-            </ul>
+          <li class="column-quarter js-menuitem">
+            <a href="<%=Figaro.env.GREAT_GOV_URL %>/services/" class="link-heading" id="header-services">Services</a>
           </li>
+
+          <% if Figaro.env.NEWS_SECTION_ON %>
+          <li class="column-quarter js-menuitem">
+            <a href="<%= Figaro.env.GREAT_GOV_URL %>/news/" class="link-heading" id="header-news">News and events</a>
+          </li>
+          <% end %>
+
         </ul>
       </nav>
     </div>
+
+    <% if Figaro.env.HEADER_SEARCH_ON %>
+    <style media="screen">
+      body.js-enabled .great-header.domestic .great-header-nav { margin-right: 260px }
+    </style>
+    <div class="great-header-search-wrapper">
+      <div class="great-header-search-container">
+        <form action="<%=Figaro.env.GREAT_GOV_URL %>/search/" method="GET">
+          <input id="search-box" type="text" name="q" placeholder="Search">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <% end %>
+
   </div>
 </header>
