@@ -14,9 +14,17 @@ RSpec.describe 'export_components/_header.html.erb', type: :view do
   end
 
   it 'contains the search box when feature is on' do
+    allow(Figaro).to receive_message_chain(:env, :HEADER_SEARCH_ON).and_return(true)
     render
     @html = Nokogiri::HTML(rendered)
-    expect(@html.css('#search-box').first)
+    expect(@html.css('#search-box').first).to be_truthy
+  end
+
+  it 'does not contain the search box when feature is off' do
+    allow(Figaro).to receive_message_chain(:env, :HEADER_SEARCH_ON).and_return(false)
+    render
+    @html = Nokogiri::HTML(rendered)
+    expect(@html.css('#search-box').first).to be_falsey
   end
 
   it 'contains the correct account links when signed in' do
