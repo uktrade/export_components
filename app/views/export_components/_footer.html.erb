@@ -1,82 +1,44 @@
-<footer id="footer">
-  <nav class="container">
-    <div class="link-group footer-logos">
-      <img id="footer-dit-logo" src="<%=asset_path('logos/DfIT_WHITE_AW.png')%>" alt="Department for International Trade"/>
-      <img id="footer-eig-logo" src="<%=asset_path('logos/EiG-logo-stacked.svg')%>" alt="Exporting is Great"/>
-    </div>
-    <div class="link-group">
-      <h4 class="links-list-heading" id="footer-advice-links">Advice</h4>
-      <ul aria-labelledby="footer-advice-links" class="links-list">
-        <li>
-          <a id="footer-advice-create-an-export-plan" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/create-an-export-plan/">Create an export plan</a>
-        </li>
-        <li>
-          <a id="footer-advice-find-an-export-market" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/find-an-export-market/">Find an export market</a>
-        </li>
-        <li>
-          <a id="footer-advice-define-route-to-market" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/define-route-to-market/">Define route to market</a>
-        </li>
-        <li>
-          <a id="footer-advice-get-export-finance-and-funding" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/get-export-finance-and-funding/">Get export finance and funding</a>
-        </li>
-        <li>
-          <a id="footer-advice-manage-payment-for-export-orders" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/manage-payment-for-export-orders/">Manage payment for export orders</a>
-        </li>
-        <li>
-          <a id="footer-advice-prepare-to-do-business-in-a-foreign-country" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/prepare-to-do-business-in-a-foreign-country/">Prepare to do business in a foreign country</a>
-        </li>
-        <li>
-          <a id="footer-advice-manage-legal-and-ethical-compliance" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/manage-legal-and-ethical-compliance/">Manage legal and ethical compliance</a>
-        </li>
-        <li>
-          <a id="footer-advice-prepare-for-export-procedures-and-logistics" href="<%=Figaro.env.GREAT_GOV_URL %>/advice/prepare-for-export-procedures-and-logistics/">Prepare for export procedures and logistics</a>
-        </li>
-      </ul>
-    </div>
-    <div class="link-group">
-      <h4 class="links-list-heading" id="footer-services-links">Services</h4>
-      <ul aria-labelledby="footer-services-links" class="links-list">
-        <li>
-          <a id="footer-services-find-a-buyer" href="<%=Figaro.env.FIND_A_BUYER_URL %>">Create a business profile</a>
-        </li>
-        <li>
-          <a id="footer-services-selling-online-overseas" href="<%=Figaro.env.SELLING_ONLINE_OVERSEAS_URL %>">Sell online overseas</a>
-        </li>
-        <li>
-          <a id="footer-services-export-opportunities" href="/">Find export opportunities</a>
-        </li>
-        <li>
-          <a id="footer-services-get-finance" href="<%=Figaro.env.GREAT_GOV_URL %>/get-finance">Get finance</a>
-        </li>
-        <li>
-          <a id="footer-services-events" href="<%=Figaro.env.EVENTS_URL %>">Find events and visits</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container site-links">
+
+<footer id="great-footer" class="great-footer">
+
+  <div class="great-footer-logo-container container">
+    <img class="great-footer-right-logo" width="180" id="great-footer-great-logo" src="<%= asset_path 'great.svg' %>" alt="Great Britain and Northern Ireland"/>
+  </div>
+
+  <nav class="great-footer-links container">
     <ul>
-      <li>
-        <a id="footer-site-links-about" href="<%=Figaro.env.GREAT_GOV_URL %>/about">About</a>
-      </li>
-      <li>
-        <a id="footer-site-links-contact" href="<%=Figaro.env.GREAT_GOV_URL %>/contact/triage/location/">Contact us</a>
-      </li>
-      <li>
-        <a id="footer-site-links-privacy-and-cookies" href="<%=Figaro.env.GREAT_GOV_URL %>/privacy-and-cookies">Privacy and cookies</a>
-      </li>
-      <li>
-        <a id="footer-site-links-t-and-c" href="<%=Figaro.env.GREAT_GOV_URL %>/terms-and-conditions">Terms and conditions</a>
-      </li>
-      <li>
-        <a id="footer-site-links-performance" href="<%=Figaro.env.GREAT_GOV_URL %>/performance-dashboard">Performance</a>
-      </li>
-      <li>
-        <a id="footer-site-links-dit" href="https://www.gov.uk/government/organisations/department-for-international-trade">Department for International Trade on GOV.UK</a>
-      </li>
+      <div class="great-footer-site-links">
+        <li>
+          <a id="footer-contact" href="<%=Figaro.env.GREAT_GOV_URL %>/contact/triage/location/">Contact us</a>
+        </li>
+        <li>
+          <a id="footer-privacy-and-cookies" href="<%=Figaro.env.GREAT_GOV_URL %>/privacy-and-cookies/">Privacy and cookies</a>
+        </li>
+        <li>
+          <a id="footer-terms-and-conditions" href="<%=Figaro.env.GREAT_GOV_URL %>/terms-and-conditions/">Terms and conditions</a>
+        </li>
+        <li>
+          <a id="footer-performance" href="<%=Figaro.env.GREAT_GOV_URL %>/performance-dashboard/">Performance</a>
+        </li>
+        <li>
+          <a id="footer-dit" href="https://www.gov.uk/government/organisations/department-for-international-trade/">Department for International Trade on GOV.UK</a>
+        </li>
+      </div>
+
+      <div class="great-footer-domestic-international-link">
+        <li>
+          <a id="footer-international" href="<%=Figaro.env.GREAT_GOV_URL %>/international/">Go to the page for international businesses</a>
+        </li>
+      </div>
+
     </ul>
+  </nav>
+
+  <div class="great-global-header-footer domestic">
+    <div class="container">
+      <img id="great-global-footer-logo" class="great-global-header-footer-logo" alt="Department for International Trade" height="21" src="<%= asset_path 'dit-logo.svg' %>">
+      <p id="great-footer-copyright" class="great-footer-copyright">&copy; Crown copyright <%= Time.current.year %>. All rights reserved.</p>
+    </div>
   </div>
-  <div id="footer-copyright">
-    <p class="container"><span id="footer-copyright-text">&copy; Crown copyright <%= Time.current.year %>. All rights reserved.</span></p>
-  </div>
+
 </footer>
