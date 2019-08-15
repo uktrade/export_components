@@ -183,4 +183,13 @@ RSpec.describe 'export_components/_footer.html.erb', type: :view do
       'https://www.gov.uk/government/organisations/department-for-international-trade/'
     )
   end
+
+  it 'contains DIT external link to gov.uk' do
+    allow(view).to receive(:current_user).and_return('user')
+    render
+    @html = Nokogiri::HTML(rendered)
+    expect(@html.css('#footer-dit').first['title']).to eq('Opens in a new window')
+    expect(@html.css('#footer-dit').first['target']).to eq('_blank')
+    expect(@html.css('#footer-dit').first['rel']).to eq('noopener noreferrer')
+  end
 end
