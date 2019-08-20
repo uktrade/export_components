@@ -1,4 +1,3 @@
-
 <header id="great-header" class="great-header domestic">
 
   <div id="great-global-header" class="great-global-header-footer great-global-header domestic">
@@ -20,9 +19,19 @@
 
       <ul class="great-header-extra-links" id="great-header-extra-links">
         <% if !current_user %>
-        <li class="anonymous">
-          <a id="header-sign-in-link" href="<%= dashboard_path %>" class="account-link signin">Sign in</a>
-        </li>
+
+          <% if !cookie_signed_in_user %>
+            <li class="anonymous">
+              <a id="header-sign-in-link" href="<%= dashboard_path %>" class="account-link signin">Sign in</a>
+            </li>
+          <% else %>
+            <li class="authenticated">
+              <a id="header-profile-link" href="<%= dashboard_path %>" class="account-link profile">Account</a>
+            </li>
+            <li class="authenticated">
+              <a id="header-sign-out-link" href="<%= destroy_user_session_path %>" class="account-link signout">Sign out</a>
+            </li>
+          <% end %>
         <% else %>
         <li class="authenticated">
           <a id="header-profile-link" href="<%= dashboard_path %>" class="account-link profile">Account</a>
