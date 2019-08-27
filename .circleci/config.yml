@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Bundle install
-          command: bundle install
+          command: bundle check || bundle install
       - run:
           name: Test
           command: make test
