@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/ruby:2.4
+      - image: circleci/ruby:2.5
     steps:
       - checkout
       - run:
