@@ -179,9 +179,8 @@ RSpec.describe 'export_components/_footer.html.erb', type: :view do
     expect(@html.css('#footer-privacy-and-cookies').first['href']).to eq('https://great.gov.uk/privacy-and-cookies/')
     expect(@html.css('#footer-terms-and-conditions').first['href']).to eq('https://great.gov.uk/terms-and-conditions/')
     expect(@html.css('#footer-performance').first['href']).to eq('https://great.gov.uk/performance-dashboard/')
-    expect(@html.css('#footer-dit').first['href']).to eq(
-      'https://www.gov.uk/government/organisations/department-for-international-trade/'
-    )
+    expect(@html.css('#footer-dit').first['href']).to eq('https://www.gov.uk/government/organisations/department-for-international-trade/')
+    expect(@html.css('#footer-accessibility').first['href']).to eq('https://great.gov.uk/accessibility-statement/')
   end
 
   it 'contains DIT external link to gov.uk' do
