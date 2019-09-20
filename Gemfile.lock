@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    export_components (2.2.0)
-      rails (~> 6.0)
+    export_components (2.2.1)
+      rails (= 5.2.3)
 
 GEM
   remote: https://rubygems.org/
