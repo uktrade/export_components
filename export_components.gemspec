@@ -20,5 +20,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'combustion'
   spec.add_development_dependency 'rspec-rails', '~> 3.7'
   spec.add_development_dependency 'byebug'
-  spec.add_dependency 'rails', '~> 6.0'
+  spec.add_dependency 'rails', '~> 5.2'
 end
